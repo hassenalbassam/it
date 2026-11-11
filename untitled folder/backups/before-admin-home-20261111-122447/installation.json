@@ -1,0 +1,11 @@
+{
+  "url": "https://localhost:8765/",
+  "backup": "/Users/husseinalbassam/Desktop/Shamara Dashboard /backups/before-admin-home-20261111-122447",
+  "nextNumbers": {
+    "incoming": "4",
+    "outgoing": "4"
+  },
+  "existingBooksPreserved": true,
+  "accountsAndPurchasesPreserved": true,
+  "validation": "135 tests; Chrome admin home cards, user and department forms, three non-admin roles, direct route denial, API mutation denial and mobile"
+}

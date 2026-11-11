@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>شمارة · مساحة العمل</title>
+<link rel="stylesheet" href="/assets/portal.css">
+</head>
+<body>
+<header class="workspace-header">
+<a class="brand" href="/"><span class="brand-mark">S</span><span>شمارة<small>SHAMARA WORKSPACE</small></span></a>
+<nav aria-label="التنقل"><a href="/" id="homeLink">الرئيسية</a><a href="/purchases?accounts=1" id="accountsLink" hidden>إدارة المستخدمين</a></nav>
+<div class="account"><span id="accountName"></span><button id="changePassword">كلمة المرور</button><button id="logout">خروج</button></div>
+</header>
+<main>
+<section id="homeView" hidden>
+<div class="home-hero">
+<div><p id="greeting"></p><h1>مساحة عمل شمارة</h1><p>اختر النظام الذي تريد العمل عليه.</p></div><time id="today"></time>
+</div>
+<section id="adminHome" class="admin-home" aria-labelledby="adminHomeTitle" hidden>
+<div class="admin-heading"><h2 id="adminHomeTitle">إدارة النظام</h2><span>لمدير النظام</span></div>
+<div class="admin-shortcuts">
+<a class="admin-shortcut" id="openUserManagement" href="/purchases?accounts=1" aria-label="إدارة المستخدمين">
+<span class="admin-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v3"/></svg></span>
+<span><strong>إدارة المستخدمين</strong><small>الحسابات والأدوار وصلاحيات الوصول</small></span><span class="admin-arrow" aria-hidden="true">←</span>
+</a>
+<a class="admin-shortcut" id="openDepartmentManagement" href="/purchases?departments=1" aria-label="إدارة الأقسام">
+<span class="admin-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="6" rx="1"/><rect x="2" y="16" width="7" height="6" rx="1"/><rect x="15" y="16" width="7" height="6" rx="1"/><path d="M12 8v4M5.5 16v-4h13v4"/></svg></span>
+<span><strong>إدارة الأقسام</strong><small>الأقسام والمديرون وأعضاء كل قسم</small></span><span class="admin-arrow" aria-hidden="true">←</span>
+</a>
+</div></section>
+<div class="module-grid">
+<article class="module-card purchase-module">
+<div class="module-symbol purchase-symbol" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="module-content"><h2>طلبات الشراء</h2><p>النماذج، الموافقات، التسعير والتجهيز، حتى استلام الطلب.</p>
+<div class="module-numbers"><div><strong id="purchaseCount">—</strong><span>طلب ضمن صلاحياتك</span></div><div><strong id="purchasePending">—</strong><span>بانتظار إجرائك</span></div></div>
+<a class="primary-link" id="openPurchases" hidden href="/purchases">فتح طلبات الشراء <span aria-hidden="true">←</span></a><p class="access-note" id="purchaseAccessNote" hidden>يحتاج حسابك إلى صلاحية الدخول إلى طلبات الشراء.</p>
+</div></article>
+<article class="module-card register-module">
+<div class="module-symbol register-symbol" aria-hidden="true"><i>↙</i><i>↗</i></div>
+<div class="module-content"><h2>سجل الصادر والوارد</h2><p>تسجيل الكتب والمراسلات، والبحث فيها، ومراجعة تفاصيلها.</p>
+<div class="module-numbers"><div><strong id="incomingCount">—</strong><span>كتاب وارد</span></div><div><strong id="outgoingCount">—</strong><span>كتاب صادر</span></div></div>
+<a class="primary-link" id="openCorrespondence" hidden href="/correspondence">فتح سجل المراسلات <span aria-hidden="true">←</span></a><p class="access-note" id="registerAccessNote" hidden>يحتاج حسابك إلى صلاحية عرض سجل الصادر والوارد.</p>
+</div></article>
+</div>
+<section class="recent-section" id="recentSection" hidden><div class="section-heading"><h2>آخر المراسلات</h2><a href="/correspondence">عرض السجل ←</a></div><div id="recentEntries"></div></section>
+</section>
+<section id="registerView" hidden>
+<div class="register-heading"><div><p class="eyebrow">المراسلات الإدارية</p><h1>سجل الصادر والوارد</h1><p>جميع الكتب في سجل مشترك يمكن الرجوع إليه.</p></div><div class="heading-actions"><button id="exportRegister">تصدير Excel</button><button class="primary" id="addEntry">+ تسجيل كتاب</button></div></div>
+<div class="register-card">
+
+<form id="filterForm" class="register-filters"><label>نوع القيد<select id="directionFilter"><option value="all">الصادر والوارد</option><option value="incoming">الوارد</option><option value="outgoing">الصادر</option></select></label><label>بحث<input id="searchEntries" type="search" placeholder="الموضوع، اسم الدائرة، رقم الكتاب" maxlength="200"></label><label>من تاريخ الكتاب<input id="fromDate" type="date"></label><label>إلى تاريخ الكتاب<input id="toDate" type="date"></label><button type="submit">بحث</button><button type="button" id="resetFilters">مسح</button></form>
+<p id="registerStatus" class="status-line" role="status" aria-live="polite"></p>
+<div class="table-scroll"><table><thead><tr><th>نوع القيد</th><th>اسم الدائرة</th><th>رقم الكتاب</th><th>تاريخ الكتاب</th><th>الموضوع</th><th>أنشأه</th><th>آخر من عدّله</th><th>الإجراءات</th></tr></thead><tbody id="registerRows"></tbody></table></div>
+<div class="pagination"><span id="entryCount"></span><div><button id="previousPage">السابق</button><span id="pageNumber"></span><button id="nextPage">التالي</button></div></div>
+</div></section>
+<p id="pageError" class="page-error" role="alert" hidden></p>
+</main>
+<footer>شمارة · مساحة العمل المشتركة</footer>
+<dialog id="entryDialog"><div class="dialog-heading"><h2 id="dialogTitle"></h2><button id="closeDialog" aria-label="إغلاق">×</button></div><div id="dialogContent"></div></dialog>
+<script src="/assets/portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "url": "https://localhost:8765/",
+  "backup": "/Users/husseinalbassam/Desktop/Shamara Dashboard /backups/before-admin-pages-20261111-124522",
+  "nextNumbers": {
+    "incoming": "102",
+    "outgoing": "102"
+  },
+  "existingBooksPreserved": true,
+  "accountsAndPurchasesPreserved": true,
+  "validation": "135 tests; Chrome standalone management, CRUD, user permissions and 38 scopes, inline department draft, legacy redirect, top plan save/reorder/reload and admin-only pages"
+}

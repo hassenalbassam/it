@@ -1,0 +1,11 @@
+{
+  "url": "https://localhost:8765/",
+  "backup": "/Users/husseinalbassam/Desktop/Shamara Dashboard /backups/before-book-attachments-20261111-133242",
+  "nextNumbers": {
+    "incoming": "1027",
+    "outgoing": "1027"
+  },
+  "existingBooksPreserved": true,
+  "accountsAndPurchasesPreserved": true,
+  "validation": "143 tests; Chrome incoming/outgoing multiple uploads, PDF/image previews, byte-accurate Arabic downloads, read-only access, edit/remove/undo, audit, private downloads and mobile"
+}

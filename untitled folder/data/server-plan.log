@@ -1,0 +1,8 @@
+روابط الموظفين داخل الشبكة:
+https://192.168.68.109:8765/
+أول إعداد للمدير: افتح https://localhost:8765/ على هذا الجهاز.
+الشهادة محلية. على مسؤول الشبكة الوثوق بها على أجهزة الموظفين أو توفير شهادة داخلية معتمدة.
+لا تشارك ملف server.key. أبقِ هذا الجهاز والخادم يعملان.
+Shamara Team Dashboard: https://localhost:8765/
+Central database: /Users/husseinalbassam/Desktop/Shamara Dashboard /data/team.sqlite3
+Keep this server running for all employees.

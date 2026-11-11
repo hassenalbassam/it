@@ -1,0 +1,13 @@
+[req]
+distinguished_name=dn
+x509_extensions=ext
+prompt=no
+[dn]
+CN=Shamara LAN Dashboard
+[ext]
+subjectAltName=@names
+[names]
+DNS.1 = localhost
+DNS.2 = Husseins-MacBook-Pro.local
+IP.1 = 127.0.0.1
+IP.2 = 192.168.50.182
